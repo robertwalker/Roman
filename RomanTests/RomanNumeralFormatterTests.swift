@@ -61,7 +61,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "MMM", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -70,7 +70,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "M", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -79,7 +79,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "DCCCC", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -88,7 +88,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "CM", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -97,7 +97,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "D", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -106,7 +106,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "CCCC", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -115,7 +115,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "CD", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -124,7 +124,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "CCC", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -133,7 +133,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "C", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -142,7 +142,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "LXXXX", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -151,7 +151,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "XC", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -160,7 +160,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "L", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -169,7 +169,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "XXXX", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -178,7 +178,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "XL", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -187,7 +187,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "XXX", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -196,7 +196,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "X", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -205,7 +205,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "VIIII", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -214,7 +214,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "IX", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -223,7 +223,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "V", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -232,7 +232,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "IIII", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -241,7 +241,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "IV", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -250,7 +250,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "III", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -259,7 +259,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "I", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -272,7 +272,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "MMMCMXCIX", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -281,7 +281,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "MMXIV", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -290,7 +290,7 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "XLIX", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
         }
     }
     
@@ -299,7 +299,128 @@ class RomanNumeralFormatterTests: XCTestCase {
             XCTAssertEqual(roman, "MCMLXXXIV", "Expected values to match")
         }
         else {
-            XCTFail("Romanizer.toRoman() returned nil")
+            XCTFail("Conversion method return no value")
+        }
+    }
+    
+    //
+    // Conveting Roman Numerals to Decimal
+    //
+    
+    func testRomanNumeralI() {
+        if let decimal = shortFormatter?.numberForRomanNumeral("I") {
+            XCTAssertEqual(decimal, 1, "Expected value to match")
+        }
+        else {
+            XCTFail("Conversion method return no value")
+        }
+    }
+    
+    func testRomanNumeralV() {
+        if let decimal = shortFormatter?.numberForRomanNumeral("V") {
+            XCTAssertEqual(decimal, 5, "Expected value to match")
+        }
+        else {
+            XCTFail("Conversion method return no value")
+        }
+    }
+    
+    func testRomanNumeralIV() {
+        if let decimal = shortFormatter?.numberForRomanNumeral("IV") {
+            XCTAssertEqual(decimal, 4, "Expected value to match")
+        }
+        else {
+            XCTFail("Conversion method return no value")
+        }
+    }
+    
+    func testRomanNumeralIIII() {
+        if let decimal = shortFormatter?.numberForRomanNumeral("IIII") {
+            XCTAssertEqual(decimal, 4, "Expected value to match")
+        }
+        else {
+            XCTFail("Conversion method return no value")
+        }
+    }
+    
+    func testRomanNumeralIX() {
+        if let decimal = shortFormatter?.numberForRomanNumeral("IX") {
+            XCTAssertEqual(decimal, 9, "Expected value to match")
+        }
+        else {
+            XCTFail("Conversion method return no value")
+        }
+    }
+
+    func testRomanNumeralXL() {
+        if let decimal = shortFormatter?.numberForRomanNumeral("XL") {
+            XCTAssertEqual(decimal, 40, "Expected value to match")
+        }
+        else {
+            XCTFail("Conversion method return no value")
+        }
+    }
+    
+    func testRomanNumeralXC() {
+        if let decimal = shortFormatter?.numberForRomanNumeral("XC") {
+            XCTAssertEqual(decimal, 90, "Expected value to match")
+        }
+        else {
+            XCTFail("Conversion method return no value")
+        }
+    }
+    
+    func testRomanNumeralCD() {
+        if let decimal = shortFormatter?.numberForRomanNumeral("CD") {
+            XCTAssertEqual(decimal, 400, "Expected value to match")
+        }
+        else {
+            XCTFail("Conversion method return no value")
+        }
+    }
+    
+    func testRomanNumeralCM() {
+        if let decimal = shortFormatter?.numberForRomanNumeral("CM") {
+            XCTAssertEqual(decimal, 900, "Expected value to match")
+        }
+        else {
+            XCTFail("Conversion method return no value")
+        }
+    }
+
+    func testMaximumPositiveRomanNumeral() {
+        if let decimal = shortFormatter?.numberForRomanNumeral("MMMCMXCIX") {
+            XCTAssertEqual(decimal, 3999, "Expected values to match")
+        }
+        else {
+            XCTFail("Conversion method return no value")
+        }
+    }
+    
+    func testRomanNumeralTwentyFourteen() {
+        if let decimal = shortFormatter?.numberForRomanNumeral("MMXIV") {
+            XCTAssertEqual(decimal, 2014, "Expected values to match")
+        }
+        else {
+            XCTFail("Conversion method return no value")
+        }
+    }
+    
+    func testRomanNumeralNextSuperBowlTwentyFifteen() {
+        if let decimal = shortFormatter?.numberForRomanNumeral("XLIX") {
+            XCTAssertEqual(decimal, 49, "Expected values to match")
+        }
+        else {
+            XCTFail("Conversion method return no value")
+        }
+    }
+    
+    func testRomanNumeralMac128KReleaseYear() {
+        if let decimal = shortFormatter?.numberForRomanNumeral("MCMLXXXIV") {
+            XCTAssertEqual(decimal, 1984, "Expected values to match")
+        }
+        else {
+            XCTFail("Conversion method return no value")
         }
     }
 }

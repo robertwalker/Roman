@@ -11,14 +11,15 @@ import Cocoa
 public class RomanNumeralFormatter: NSFormatter {
     public var formattingUnitStyle = NSFormattingUnitStyle.Short
     
-    let romanDigits = [
-        ("M", 1000),
-        ("D", 500),
-        ("C", 100),
-        ("L", 50),
-        ("X", 10),
-        ("V", 5),
-        ("I", 1)
+    let romanDigits = [ "M", "D", "C", "L", "X", "V", "I" ]
+    let romanDigitValues = [
+        "M": 1000,
+        "D": 500,
+        "C": 100,
+        "L": 50,
+        "X": 10,
+        "V": 5,
+        "I": 1
     ]
     
     override public func stringForObjectValue(obj: AnyObject) -> String? {
@@ -28,7 +29,7 @@ public class RomanNumeralFormatter: NSFormatter {
         return nil
     }
     
-    public func stringForInteger(obj: Int) -> String! {
+    public func stringForInteger(obj: Int) -> String? {
         var romanComponents: [String] = []
         var decimal = obj
         
@@ -37,29 +38,51 @@ public class RomanNumeralFormatter: NSFormatter {
             return nil
         }
         
-        for (symbol, value) in romanDigits {
-            var segment = ""
-            var segmentLength = 0
-            while decimal >= value {
-                segment += symbol
-                decimal -= value
-                segmentLength = countElements(segment)
-                if (formattingUnitStyle == .Short && segmentLength > 3) {
-                    let (newSegment, replacesLast) = subtractiveNotation(romanComponents, segment: segment)
-                    if newSegment != segment {
-                        if (replacesLast && romanComponents.count > 0) {
-                            romanComponents.removeLast()
+        for symbol in romanDigits {
+            if let value = romanDigitValues[symbol] {
+                var segment = ""
+                var segmentLength = 0
+                while decimal >= value {
+                    segment += symbol
+                    decimal -= value
+                    segmentLength = countElements(segment)
+                    if (formattingUnitStyle == .Short && segmentLength > 3) {
+                        let (newSegment, replacesLast) = subtractiveNotation(romanComponents, segment: segment)
+                        if newSegment != segment {
+                            if (replacesLast && romanComponents.count > 0) {
+                                romanComponents.removeLast()
+                            }
+                            segment = newSegment
                         }
-                        segment = newSegment
                     }
                 }
+                if countElements(segment) > 0 {
+                    romanComponents.append(segment)
+                }
             }
-            if countElements(segment) > 0 {
-                romanComponents.append(segment)
+            else {
+                return nil
             }
         }
         
         return "".join(romanComponents)
+    }
+    
+    override public func getObjectValue(obj: AutoreleasingUnsafeMutablePointer<AnyObject?>, forString string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>) -> Bool {
+        
+        return true
+    }
+    
+    public func numberForRomanNumeral(roman: String) -> Int? {
+        var decimal = 0
+        
+        let longRoman = additiveNotation(roman)
+        for character in longRoman {
+            if let value = romanDigitValues[String(character)] {
+                decimal += value
+            }
+        }
+        return decimal
     }
     
     private func subtractiveNotation(romanComponents: [String], segment: String) -> (String, Bool) {
@@ -80,5 +103,23 @@ public class RomanNumeralFormatter: NSFormatter {
         default:
             return (segment, false)
         }
+    }
+    
+    private func additiveNotation(roman: String) -> String {
+        var longRoman = roman
+        let notations = [
+            "CM": "DCCCC",
+            "CD": "CCCC",
+            "XC": "LXXXX",
+            "XL": "XXXX",
+            "IX": "VIIII",
+            "IV": "IIII"
+        ]
+        
+        for (shortNotation, longNotation) in notations {
+            longRoman = longRoman.stringByReplacingOccurrencesOfString(shortNotation, withString: longNotation)
+        }
+        
+        return longRoman
     }
 }
