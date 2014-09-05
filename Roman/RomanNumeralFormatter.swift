@@ -9,6 +9,8 @@
 import Cocoa
 
 public class RomanNumeralFormatter: NSFormatter {
+    public var formattingUnitStyle = NSFormattingUnitStyle.Short
+    
     let romanDigits = [
         ("M", 1000),
         ("D", 500),
@@ -21,16 +23,12 @@ public class RomanNumeralFormatter: NSFormatter {
     
     override public func stringForObjectValue(obj: AnyObject) -> String? {
         if let possibleInt = obj as? Int {
-            return stringForInteger(possibleInt, formattingUnitStyle: .Short)
+            return stringForInteger(possibleInt)
         }
         return nil
     }
     
     public func stringForInteger(obj: Int) -> String! {
-        return stringForInteger(obj, formattingUnitStyle: .Short)
-    }
-    
-    public func stringForInteger(obj: Int, formattingUnitStyle: NSFormattingUnitStyle) -> String! {
         var romanComponents: [String] = []
         var decimal = obj
         
