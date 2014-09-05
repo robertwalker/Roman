@@ -11,7 +11,7 @@ import XCTest
 import Roman
 
 class RomanNumeralFormatterTests: XCTestCase {
-    var formatter = RomanNumeralFormatter()
+    var formatter: RomanNumeralFormatter?
     
     override func setUp() {
         super.setUp()
@@ -28,19 +28,19 @@ class RomanNumeralFormatterTests: XCTestCase {
     //
     
     func testZeroInteger() {
-        if let roman = formatter.stringForInteger(0) {
+        if let roman = formatter?.stringForInteger(0) {
             XCTFail("Result should have no value but was \(roman)")
         }
     }
     
     func testOverflowInteger() {
-        if let roman = formatter.stringForInteger(4000) {
+        if let roman = formatter?.stringForInteger(4000) {
             XCTFail("Result should have no value but was \(roman)")
         }
     }
     
     func testNegativeInteger() {
-        if let roman = formatter.stringForInteger(-1) {
+        if let roman = formatter?.stringForInteger(-1) {
             XCTFail("Result should have no value but was \"\(roman)\"!")
         }
     }
@@ -50,7 +50,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     //
     
     func testPositiveIntegerThreeThousand() {
-        if let roman = formatter.stringForInteger(3000) {
+        if let roman = formatter?.stringForInteger(3000) {
             XCTAssertEqual(roman, "MMM", "Expected values to match")
         }
         else {
@@ -59,7 +59,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerOneThousand() {
-        if let roman = formatter.stringForInteger(1000) {
+        if let roman = formatter?.stringForInteger(1000) {
             XCTAssertEqual(roman, "M", "Expected values to match")
         }
         else {
@@ -68,7 +68,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerNineHundredLong() {
-        if let roman = formatter.stringForInteger(900, formattingUnitStyle: .Long) {
+        if let roman = formatter?.stringForInteger(900, formattingUnitStyle: .Long) {
             XCTAssertEqual(roman, "DCCCC", "Expected values to match")
         }
         else {
@@ -77,7 +77,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerNineHundredShort() {
-        if let roman = formatter.stringForInteger(900) {
+        if let roman = formatter?.stringForInteger(900) {
             XCTAssertEqual(roman, "CM", "Expected values to match")
         }
         else {
@@ -86,7 +86,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerFiveHundred() {
-        if let roman = formatter.stringForInteger(500) {
+        if let roman = formatter?.stringForInteger(500) {
             XCTAssertEqual(roman, "D", "Expected values to match")
         }
         else {
@@ -95,7 +95,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerFourHundredLong() {
-        if let roman = formatter.stringForInteger(400, formattingUnitStyle: .Long) {
+        if let roman = formatter?.stringForInteger(400, formattingUnitStyle: .Long) {
             XCTAssertEqual(roman, "CCCC", "Expected values to match")
         }
         else {
@@ -104,7 +104,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerFourHundredShort() {
-        if let roman = formatter.stringForInteger(400) {
+        if let roman = formatter?.stringForInteger(400) {
             XCTAssertEqual(roman, "CD", "Expected values to match")
         }
         else {
@@ -113,7 +113,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerThreeHundred() {
-        if let roman = formatter.stringForInteger(300) {
+        if let roman = formatter?.stringForInteger(300) {
             XCTAssertEqual(roman, "CCC", "Expected values to match")
         }
         else {
@@ -122,7 +122,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerOneHundred() {
-        if let roman = formatter.stringForInteger(100) {
+        if let roman = formatter?.stringForInteger(100) {
             XCTAssertEqual(roman, "C", "Expected values to match")
         }
         else {
@@ -131,7 +131,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerNinetyLong() {
-        if let roman = formatter.stringForInteger(90, formattingUnitStyle: .Long) {
+        if let roman = formatter?.stringForInteger(90, formattingUnitStyle: .Long) {
             XCTAssertEqual(roman, "LXXXX", "Expected values to match")
         }
         else {
@@ -140,7 +140,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerNinetyShort() {
-        if let roman = formatter.stringForInteger(90) {
+        if let roman = formatter?.stringForInteger(90) {
             XCTAssertEqual(roman, "XC", "Expected values to match")
         }
         else {
@@ -149,7 +149,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerFifty() {
-        if let roman = formatter.stringForInteger(50) {
+        if let roman = formatter?.stringForInteger(50) {
             XCTAssertEqual(roman, "L", "Expected values to match")
         }
         else {
@@ -158,7 +158,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerFourtyLong() {
-        if let roman = formatter.stringForInteger(40, formattingUnitStyle: .Long) {
+        if let roman = formatter?.stringForInteger(40, formattingUnitStyle: .Long) {
             XCTAssertEqual(roman, "XXXX", "Expected values to match")
         }
         else {
@@ -167,7 +167,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerFourtyShort() {
-        if let roman = formatter.stringForInteger(40) {
+        if let roman = formatter?.stringForInteger(40) {
             XCTAssertEqual(roman, "XL", "Expected values to match")
         }
         else {
@@ -176,7 +176,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerThirty() {
-        if let roman = formatter.stringForInteger(30) {
+        if let roman = formatter?.stringForInteger(30) {
             XCTAssertEqual(roman, "XXX", "Expected values to match")
         }
         else {
@@ -185,7 +185,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerTen() {
-        if let roman = formatter.stringForInteger(10) {
+        if let roman = formatter?.stringForInteger(10) {
             XCTAssertEqual(roman, "X", "Expected values to match")
         }
         else {
@@ -194,7 +194,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerNineLong() {
-        if let roman = formatter.stringForInteger(9, formattingUnitStyle: .Long) {
+        if let roman = formatter?.stringForInteger(9, formattingUnitStyle: .Long) {
             XCTAssertEqual(roman, "VIIII", "Expected values to match")
         }
         else {
@@ -203,7 +203,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerNineShort() {
-        if let roman = formatter.stringForInteger(9) {
+        if let roman = formatter?.stringForInteger(9) {
             XCTAssertEqual(roman, "IX", "Expected values to match")
         }
         else {
@@ -212,7 +212,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerFive() {
-        if let roman = formatter.stringForInteger(5) {
+        if let roman = formatter?.stringForInteger(5) {
             XCTAssertEqual(roman, "V", "Expected values to match")
         }
         else {
@@ -221,7 +221,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerFourLong() {
-        if let roman = formatter.stringForInteger(4, formattingUnitStyle: .Long) {
+        if let roman = formatter?.stringForInteger(4, formattingUnitStyle: .Long) {
             XCTAssertEqual(roman, "IIII", "Expected values to match")
         }
         else {
@@ -230,7 +230,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerFourShort() {
-        if let roman = formatter.stringForInteger(4) {
+        if let roman = formatter?.stringForInteger(4) {
             XCTAssertEqual(roman, "IV", "Expected values to match")
         }
         else {
@@ -239,7 +239,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerThree() {
-        if let roman = formatter.stringForInteger(3) {
+        if let roman = formatter?.stringForInteger(3) {
             XCTAssertEqual(roman, "III", "Expected values to match")
         }
         else {
@@ -248,7 +248,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testPositiveIntegerOne() {
-        if let roman = formatter.stringForInteger(1) {
+        if let roman = formatter?.stringForInteger(1) {
             XCTAssertEqual(roman, "I", "Expected values to match")
         }
         else {
@@ -261,7 +261,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     //
     
     func testMaximumPositiveInteger() {
-        if let roman = formatter.stringForInteger(3999) {
+        if let roman = formatter?.stringForInteger(3999) {
             XCTAssertEqual(roman, "MMMCMXCIX", "Expected values to match")
         }
         else {
@@ -270,7 +270,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testTwentyFourteen() {
-        if let roman = formatter.stringForInteger(2014) {
+        if let roman = formatter?.stringForInteger(2014) {
             XCTAssertEqual(roman, "MMXIV", "Expected values to match")
         }
         else {
@@ -279,7 +279,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testNextSuperBowlTwentyFifteen() {
-        if let roman = formatter.stringForInteger(49) {
+        if let roman = formatter?.stringForInteger(49) {
             XCTAssertEqual(roman, "XLIX", "Expected values to match")
         }
         else {
@@ -288,7 +288,7 @@ class RomanNumeralFormatterTests: XCTestCase {
     }
     
     func testMac128KReleaseYear() {
-        if let roman = formatter.stringForInteger(1984) {
+        if let roman = formatter?.stringForInteger(1984) {
             XCTAssertEqual(roman, "MCMLXXXIV", "Expected values to match")
         }
         else {
