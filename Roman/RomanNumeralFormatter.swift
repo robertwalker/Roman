@@ -19,7 +19,7 @@ public class RomanNumeralFormatter: NSFormatter {
         ("I", 1)
     ]
     
-    override public func stringForObjectValue(obj: AnyObject!) -> String! {
+    override public func stringForObjectValue(obj: AnyObject) -> String? {
         if let possibleInt = obj as? Int {
             return stringForInteger(possibleInt, formattingUnitStyle: .Short)
         }
